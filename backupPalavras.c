@@ -33,6 +33,26 @@ void BackupPalavras(FILE *arquivo) {
         "RISCO", "MUDAR", "PUNIR", "TIROS", "CHÃOS",
         "SÉRIE", "CERTO", "DUROS", "LOIRO", "PODER",
         "BOLSO", "FALSA", "MOTEL", "HOTEL", "JUBAS"
+     // Palavras adicionais
+        "AROMA", "BEIJO", "CORRER", "DESTINO", "ELEGÂNCIA",
+        "FORÇA", "GEMA", "HONRA", "INTUITO", "JEITO",
+        "KARATÊ", "LEVEZA", "MORADA", "NECESSÁRIO", "ORVALHO",
+        "PODER", "QUEIJO", "RITMO", "SÁBIO", "TEMPO",
+        "UNIR", "VERSO", "XADREZ", "ZELO", "ALEGRE",
+        "BRILHO", "CORDIAL", "DECENTE", "ENERGIA", "FIRMEZA",
+        "GELO", "HARMONIA", "INTENSO", "JUSTIÇA", "LÁGRIMA",
+        "MUDANÇA", "NORMAL", "ORGULHO", "PAZ", "QUIMERA",
+        "RADIANTE", "SOFRER", "TRILHA", "UMIDADE", "VIÇO",
+        "XILOFONE", "ZONA", "ALENTO", "BRASA", "CÉU",
+        "DÓCIL", "EUFORIA", "FÁBULA", "GALHO", "HÁBIL",
+        "IDEIA", "JAZIDA", "LAMENTO", "MISTER", "NAVIO",
+        "OÁSIS", "PINGO", "QUERIDO", "ROMANCE", "SERENO",
+        "TERNURA", "USADO", "VIRTUDE", "XAMPU", "ZUMBIDO",
+        "ANTIGO", "BELEZA", "CHAVE", "DECORO", "ESMERO",
+        "FLUIR", "GAIOLA", "HABITAR", "ÍMPETO", "JUSTO",
+        "LUZIR", "MEDO", "NÉVOA", "ORDEM", "PRESENTE",
+        "QUENTE", "RISO", "SONHO", "TREMOR", "UTOPIA",
+        "VOLTAR", "XOXO", "ZIGUE"
 
     };
 
