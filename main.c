@@ -7,8 +7,8 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
 
 
 
-        int main() //função que inicializa o programa em C {
-
+        int main() {
+//função que inicializa o programa em C
         // Configurações de console para suportar caracteres UTF-8
         SetConsoleCP(CP_UTF8); //Configuração de codificação de carateres do console de entrada
         SetConsoleOutputCP(CP_UTF8); //Configuração de codificação de carateres do console de saída
