@@ -225,7 +225,6 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
                 printf("\n\n");
 
                 printf("Digite uma palavra com %d letras: \n", jogador->lvlAtual + 4);
-                printf("%s", resposta);
                 fgets(tentativa, 10 + jogador->lvlAtual, stdin);
                 tentativa[strcspn(tentativa, "\n")] = 0;
 
@@ -253,9 +252,9 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
                 printf("Pontuação total do jogador: ");
                 colorir(COR_VERDE);
                 printf("%d\n", jogador->pontos); // Exibe a pontuação total
+                colorir(COR_ROSA);
+                printf("Próxima fase em: %d pontos", ((jogador->lvlAtual+1) * 20) - jogador->pontos);
                 colorir(COR_BRANCO);
-
-
 
               // Caso o jogador não acertar
             } else {
@@ -277,6 +276,9 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
                 colorir(COR_VERDE);
                 printf("%d\n", jogador->pontos); // Exibe a pontuação total
                 colorir(COR_BRANCO);
+                colorir(COR_ROSA);
+                printf("Próxima fase em: %d pontos", ((jogador->lvlAtual+1) * 20) - jogador->pontos);
+                colorir(COR_BRANCO);
 
 
             }
@@ -285,7 +287,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
 
 
             // Função que verifica se o jogador deseja continuar jogo
-            if(!continuarJogo(&estadoJogo)) {
+            if(!continuarJogo(&estadoJogo, jogador)) {
                 free(listaPalavras); // Libera a memória alocada para a lista de palavras
                 free(palavra); // Libera a memória alocada para a palavra temporária
                 free(jogador); // Libera a memória alocada para o jogador

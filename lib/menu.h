@@ -23,6 +23,7 @@ typedef struct Jogador {
 void displayMenu(jogador_t *jogador, bool *estado);
 
 
+bool continuarJogo(bool *estado, jogador_t *jogador);
 
 
 #endif //MENU_H

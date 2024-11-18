@@ -55,7 +55,7 @@ void displayMenu(jogador_t *jogador, bool *estado) {
         case '4':
         system("cls");
         fflush(stdout);
-        if(!continuarJogo(estado)) {
+        if(!continuarJogo(estado, jogador)) {
             Sleep(1000);
             *estado = false;
 
@@ -72,3 +72,34 @@ void displayMenu(jogador_t *jogador, bool *estado) {
 
 
 };
+
+
+bool continuarJogo(bool *estado, jogador_t *jogador) {
+    char c;
+
+    fflush(stdin);
+    colorir(COR_VERDE);
+    printf("\nS PARA CONTINUAR\n");
+    colorir(COR_VERMELHO);
+    printf("\nN PARA SAIR\n");
+    colorir(COR_BRANCO);
+    colorir(COR_AMARELO);
+    printf("\nM PARA MENU PRINCIPAL\n");
+    colorir(COR_BRANCO);
+    c = getTecladoJogador();
+
+
+    if (c == 's' || c == 'S') {
+        system("cls");
+        return true;
+    }
+
+    if(c == 'n' || c == 'N') {
+        return false;
+    }
+
+    if(c == 'M' || c == 'm') {
+        system("cls");
+        displayMenu(jogador, estado);
+    }
+}

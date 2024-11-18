@@ -6,9 +6,10 @@
 #include <stdlib.h>
 #include <windows.h>
 #include "cores.h"
+#include "lib.h"
 
 void converteMaiusculo(char *tentativa) {
-    int tamanho = strlen(digitado);  // Calcula o comprimento da string uma única vez
+    int tamanho = strlen(tentativa);  // Calcula o comprimento da string uma única vez
     for (int i = 0; i < tamanho; i++) {
         if (tentativa[i] >= 'a' && tentativa[i] <= 'z') {
             tentativa[i] -= 32;  // Converte para maiúscula
@@ -92,23 +93,4 @@ char getTecladoJogador() {
 }
 
 
-bool continuarJogo(bool *estado) {
-    char c;
 
-    fflush(stdin);
-    colorir(COR_VERDE);
-    printf("\nS PARA CONTINUAR\n");
-    colorir(COR_VERMELHO);
-    printf("\nN PARA SAIR\n");
-    colorir(COR_BRANCO);
-    c = getTecladoJogador();
-
-
-    if (c == 's' || c == 'S') {
-        system("cls");
-        return true;
-
-    } else {
-        return false;
-    }
-}

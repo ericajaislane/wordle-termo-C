@@ -12,12 +12,16 @@
 #include <locale.h>
 #include <windows.h>
 
+#include "menu.h"
+#include "lib.h"
+
+
 
 bool processarTentativa(const char *tentativa, const  char *resposta, int *N, int lvl);
 
 char getTecladoJogador();
 
-bool continuarJogo(bool *estado);
+
 
 void converteMaiusculo(char *tentativa);
 
