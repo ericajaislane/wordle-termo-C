@@ -50,7 +50,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
             }
 
             if(jogador->modo == PROCEDURAL) {
-                jogador->lvlAtual = rand() % 5;
+                jogador->lvlAtual = rand() % 4;
             }
 
             switch(jogador->lvlAtual) {
@@ -72,8 +72,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
                     listaPalavras[contadorPalavra] = palavra; // Armazena cada palavra lida na lista
                     contadorPalavra++; // Incrementa o contador de palavras
                     palavra = malloc(10 * sizeof(char)); // Aloca novamente a memória para a próxima palavra
-                    printf("\nLVL 1 -  CARREGANDO %d%%", contadorPalavra * 100 / MAX_PALAVRAS); // Exibe o progresso de carregamento
-                    Sleep(10); // Aguarda, simula o carregamento, um curto período de tempo
+
                     fflush(stdout); // Garante que a saída seja exibida imediatamente
 
                 }
@@ -100,8 +99,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
                     listaPalavras[contadorPalavra] = palavra; // Armazena cada palavra lida na lista
                     contadorPalavra++; // Incrementa o contador de palavras
                     palavra = malloc(10 * sizeof(char)); // Aloca novamente a memória para a próxima palavra
-                    printf("\nLVL 2 - CARREGANDO %d%%", contadorPalavra * 100 / MAX_PALAVRAS); // Exibe o progresso de carregamento
-                    Sleep(10); // Aguarda, simula o carregamento, um curto período de tempo
+
                     fflush(stdout); // Garante que a saída seja exibida imediatamente
 
                 }
@@ -129,8 +127,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
                     listaPalavras[contadorPalavra] = palavra; // Armazena cada palavra lida na lista
                     contadorPalavra++; // Incrementa o contador de palavras
                     palavra = malloc(10 * sizeof(char)); // Aloca novamente a memória para a próxima palavra
-                    printf("\nLVL 3 - CARREGANDO %d%%", contadorPalavra * 100 / MAX_PALAVRAS); // Exibe o progresso de carregamento
-                    Sleep(10); // Aguarda, simula o carregamento, um curto período de tempo
+
                     fflush(stdout); // Garante que a saída seja exibida imediatamente
 
                 }
@@ -159,8 +156,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
                     listaPalavras[contadorPalavra] = palavra; // Armazena cada palavra lida na lista
                     contadorPalavra++; // Incrementa o contador de palavras
                     palavra = malloc(10 * sizeof(char)); // Aloca novamente a memória para a próxima palavra
-                    printf("\nLVL 4 - CARREGANDO %d%%", contadorPalavra * 100 / MAX_PALAVRAS); // Exibe o progresso de carregamento
-                    Sleep(10); // Aguarda, simula o carregamento, um curto período de tempo
+
                     fflush(stdout); // Garante que a saída seja exibida imediatamente
 
                 }
@@ -188,8 +184,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
                     listaPalavras[contadorPalavra] = palavra; // Armazena cada palavra lida na lista
                     contadorPalavra++; // Incrementa o contador de palavras
                     palavra = malloc(10 * sizeof(char)); // Aloca novamente a memória para a próxima palavra
-                    printf("\nLVL 5 - CARREGANDO %d%%", contadorPalavra * 100 / MAX_PALAVRAS); // Exibe o progresso de carregamento
-                    Sleep(10); // Aguarda, simula o carregamento, um curto período
+
                     fflush(stdout); // Garante que a saída seja exibida imediatamente
 
                 }
@@ -217,15 +212,18 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
             printf("  | | | _|| /  |\\/| | (_) |\n");
             printf("  |_| |___|_|_ \\_| |_|\\___/ \n");
             colorir(COR_BRANCO);
-            printf("LEVEL ATUAL: %d\n", jogador->lvlAtual);
+            printf("\n\n\n");
+            colorir(COR_ROXO);
+            printf("LEVEL ATUAL: %d\n", jogador->lvlAtual + 1);
+            colorir(COR_VERDE_CLARO);
             printf("PONTOS: %d", jogador->pontos);
             printf("\n\n\n\n\n");
-
+            colorir(COR_BRANCO);
             // Loop de tentativas de adivinhar a palavra
             while(NumeroTentativas < 6 && !acertou_palavras) {
                 fflush(stdin); // Limpa o buffer de entrada
                 printf("\n\n");
-                printf("\n%s", resposta);
+
                 printf("Digite uma palavra com %d letras: \n", jogador->lvlAtual + 4);
 
                 fgets(tentativa, 10 + jogador->lvlAtual, stdin);
