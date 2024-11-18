@@ -45,8 +45,8 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
             int contadorPalavra = 0; // Contador para o número de palavras lidas do arquivo
             FILE *arqPalavras;
 
-            if(jogador->pontos > (jogador->lvlAtual+1) * 6 && jogador->modo == LINEAR) {
-                jogador->lvlAtual = jogador->lvlAtual + 1;
+            if(jogador->pontos > (jogador->lvlAtual+1) * 20 && jogador->modo == LINEAR) {
+                jogador->lvlAtual++;
             }
 
             if(jogador->modo == PROCEDURAL) {
@@ -61,7 +61,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
 
                 // Se as palavras não forem carregadas
                 if (arqPalavras == NULL) {
-                    printf("Erro abrindo lista de palavras\nO ARQUIVO SERÁ GERADO \n \n \n \n");
+                    printf("Erro abrindo lista de palavras\n\n \n \n \n");
                     fclose(arqPalavras); // Fecha o arquivo caso o arquivo não abra (pois o fopen falhou)
                 }
 
@@ -71,7 +71,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
                 while(fscanf(arqPalavras, "%s", palavra) != EOF) {
                     listaPalavras[contadorPalavra] = palavra; // Armazena cada palavra lida na lista
                     contadorPalavra++; // Incrementa o contador de palavras
-                    palavra = malloc(10 * sizeof(char)); // Aloca novamente a memória para a próxima palavra
+                    palavra = malloc(5 * sizeof(char)); // Aloca novamente a memória para a próxima palavra
 
                     fflush(stdout); // Garante que a saída seja exibida imediatamente
 
@@ -98,7 +98,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
                 while(fscanf(arqPalavras, "%s", palavra) != EOF) {
                     listaPalavras[contadorPalavra] = palavra; // Armazena cada palavra lida na lista
                     contadorPalavra++; // Incrementa o contador de palavras
-                    palavra = malloc(10 * sizeof(char)); // Aloca novamente a memória para a próxima palavra
+                    palavra = malloc(6 * sizeof(char)); // Aloca novamente a memória para a próxima palavra
 
                     fflush(stdout); // Garante que a saída seja exibida imediatamente
 
@@ -126,7 +126,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
                 while(fscanf(arqPalavras, "%s", palavra) != EOF) {
                     listaPalavras[contadorPalavra] = palavra; // Armazena cada palavra lida na lista
                     contadorPalavra++; // Incrementa o contador de palavras
-                    palavra = malloc(10 * sizeof(char)); // Aloca novamente a memória para a próxima palavra
+                    palavra = malloc(7 * sizeof(char)); // Aloca novamente a memória para a próxima palavra
 
                     fflush(stdout); // Garante que a saída seja exibida imediatamente
 
@@ -155,7 +155,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
                 while(fscanf(arqPalavras, "%s", palavra) != EOF) {
                     listaPalavras[contadorPalavra] = palavra; // Armazena cada palavra lida na lista
                     contadorPalavra++; // Incrementa o contador de palavras
-                    palavra = malloc(10 * sizeof(char)); // Aloca novamente a memória para a próxima palavra
+                    palavra = malloc(8 * sizeof(char)); // Aloca novamente a memória para a próxima palavra
 
                     fflush(stdout); // Garante que a saída seja exibida imediatamente
 
@@ -183,7 +183,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
                 while(fscanf(arqPalavras, "%s", palavra) != EOF) {
                     listaPalavras[contadorPalavra] = palavra; // Armazena cada palavra lida na lista
                     contadorPalavra++; // Incrementa o contador de palavras
-                    palavra = malloc(10 * sizeof(char)); // Aloca novamente a memória para a próxima palavra
+                    palavra = malloc(9 * sizeof(char)); // Aloca novamente a memória para a próxima palavra
 
                     fflush(stdout); // Garante que a saída seja exibida imediatamente
 
@@ -213,7 +213,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
             printf("  |_| |___|_|_ \\_| |_|\\___/ \n");
             colorir(COR_BRANCO);
             printf("\n\n\n");
-            colorir(COR_ROXO);
+            colorir(COR_AMARELO);
             printf("LEVEL ATUAL: %d\n", jogador->lvlAtual + 1);
             colorir(COR_VERDE_CLARO);
             printf("PONTOS: %d", jogador->pontos);
@@ -225,7 +225,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
                 printf("\n\n");
 
                 printf("Digite uma palavra com %d letras: \n", jogador->lvlAtual + 4);
-
+                printf("%s", resposta);
                 fgets(tentativa, 10 + jogador->lvlAtual, stdin);
                 tentativa[strcspn(tentativa, "\n")] = 0;
 
@@ -250,7 +250,7 @@ const int MAX_PALAVRAS = 301; // Definição de uma constante para o número má
                 colorir(COR_VERDE);
                 printf("%d\n", 7 - NumeroTentativas);  // Exibe a pontuação
                 colorir(COR_BRANCO);
-                printf("Pontuação total do jogador:");
+                printf("Pontuação total do jogador: ");
                 colorir(COR_VERDE);
                 printf("%d\n", jogador->pontos); // Exibe a pontuação total
                 colorir(COR_BRANCO);
