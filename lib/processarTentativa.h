@@ -19,5 +19,6 @@ char getTecladoJogador();
 
 bool continuarJogo(bool *estado);
 
+void converteMaiusculo(char *tentativa);
 
 #endif //PROCESSARTENTATIVA_H
