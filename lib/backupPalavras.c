@@ -9,7 +9,7 @@ void BackupPalavras(FILE *arquivo) {
     setlocale(LC_ALL, "Portuguese");
 
 
-    arquivo = fopen("../palavras.txt", "a");
+    arquivo = fopen("../palavras1.txt", "a");
     char *backupPalavras[] = {
         "FESTA", "PAPEL", "GATOS", "MANGA", "AMIGO",
         "BOLAS", "CHEIO", "DENTE", "VENTO", "CERTA",

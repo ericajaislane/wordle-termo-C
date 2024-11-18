@@ -23,7 +23,9 @@ void displayMenu(jogador_t *jogador, bool *estado) {
 
     printf(" 2. ESTATÍSTICAS\n");
 
-    printf(" 3. SAIR\n");
+    printf(" 3. PROCEDURAL\n");
+
+    printf(" 4. SAIR\n");
 
     switch(getTecladoJogador()) {
         case '1':
@@ -44,7 +46,13 @@ void displayMenu(jogador_t *jogador, bool *estado) {
             printf("Erro na abertura do arquivo stats.txt\n");
         }*/
 
+
         case '3':
+            jogador->modo = PROCEDURAL;
+
+            break;
+
+        case '4':
         system("cls");
         fflush(stdout);
         if(!continuarJogo(estado)) {

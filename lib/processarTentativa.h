@@ -13,7 +13,7 @@
 #include <windows.h>
 
 
-bool processarTentativa(const char *tentativa, const  char *resposta, int *N);
+bool processarTentativa(const char *tentativa, const  char *resposta, int *N, int lvl);
 
 char getTecladoJogador();
 

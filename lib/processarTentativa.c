@@ -9,23 +9,23 @@
 
 
 
-bool processarTentativa(const char *tentativa, const  char *resposta, int *N) {
+bool processarTentativa(const char *tentativa, const  char *resposta, int *N, int lvl) {
 
-    char pista[6] = {'_','_','_','_','_','\0'};
-    bool pistaTentativa[5] = {false, false, false, false, false};
-
-
+    char pista[11] = {'_','_','_','_','_','_','_','_','_','_','\0'};
+    bool pistaTentativa[10] = {false, false, false, false, false, false, false, false, false, false};
 
 
-    if(strlen(tentativa) != 5) { // Verifica se a palavra tem 5 letras
-        printf("ERRO! Digite uma palavra com 5 letras!\n");
+
+
+    if(strlen(tentativa) != 4 + lvl) { // Verifica se a palavra tem 5 letras
+        printf("ERRO! Digite uma palavra com %d letras!\n", 4 + lvl);
     } else {
         (*N)++; //Incrementa as tentativas
         if (strcmp(tentativa, resposta) == 0) { // Verifica se são iguais
             return true;
         }
         // Verifica se a letra esta na posicao correta
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4 + lvl; i++) {
             if (tentativa[i] == resposta[i]) {
                 pista[i] = 'A';
                 pistaTentativa[i] = true;
@@ -34,9 +34,9 @@ bool processarTentativa(const char *tentativa, const  char *resposta, int *N) {
         }
 
         // Verifica se a letra existe mas em outra posicao
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4 + lvl; i++) {
             if (pista[i] == '_') {
-                for (int j = 0; j < 6; j++) {
+                for (int j = 0; j < 4 + lvl; j++) {
                     if (tentativa[i] == resposta[j] && !pistaTentativa[j]) {
                         pista[i] = 'Q';
                         pistaTentativa[j] = true;
@@ -49,7 +49,7 @@ bool processarTentativa(const char *tentativa, const  char *resposta, int *N) {
         }
         printf("\n-----------------------------------------------------\n");
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4 + lvl; i++) {
             if (pista[i] == 'A') {
                 colorir(2);
                 printf("%c", tentativa[i]);
