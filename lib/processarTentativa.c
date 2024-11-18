@@ -7,6 +7,14 @@
 #include <windows.h>
 #include "cores.h"
 
+void converteMaiusculo(char *tentativa) {
+    int tamanho = strlen(digitado);  // Calcula o comprimento da string uma única vez
+    for (int i = 0; i < tamanho; i++) {
+        if (tentativa[i] >= 'a' && tentativa[i] <= 'z') {
+            tentativa[i] -= 32;  // Converte para maiúscula
+        }
+    }
+}
 
 
 bool processarTentativa(const char *tentativa, const  char *resposta, int *N, int lvl) {
@@ -14,7 +22,7 @@ bool processarTentativa(const char *tentativa, const  char *resposta, int *N, in
     char pista[11] = {'_','_','_','_','_','_','_','_','_','_','\0'};
     bool pistaTentativa[10] = {false, false, false, false, false, false, false, false, false, false};
 
-
+    converteMaiusculo(tentativa);
 
 
     if(strlen(tentativa) != 4 + lvl) { // Verifica se a palavra tem 5 letras
